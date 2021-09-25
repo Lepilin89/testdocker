@@ -5,6 +5,6 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello /home/hw/
 RUN mvn package
 CMD ["mvn"]
 FROM tomcat:9.0.53-jdk8
-COPY --from=maven /home/hw/maven/boxfuse-sample-java-war-hello/target/hello-1.0.war /usr/local/tomcat/webapps
+COPY --from=maven /home/hw/maven/target/hello-1.0.war /usr/local/tomcat/webapps
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
